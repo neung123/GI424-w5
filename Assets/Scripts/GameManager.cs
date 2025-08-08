@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    [SerializeField]
+    private Transform _grassHolder;
 
     [SerializeField]
-    private Grass _grassPrefab;
+    private List<Grass> _grassPrefabs;
 
     [SerializeField]
     private Goat _goatPrefab;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _grassSpacing = 2f;
 
+    public static GameManager Instance;
+
     private List<Grass> _allGrass;
 
     private void Awake()
@@ -31,13 +34,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        for (int row = 0; row < _grassRows; row++)
+        for (int r = 0; r < _grassRows; r++)
         {
-            for (int col = 0; col < _grassCols; col++)
+            for (int c = 0; c < _grassCols; c++)
             {
-                Vector3 pos = new Vector3(col * _grassSpacing, 0, row * _grassSpacing);
+                // pick a random grass prefab from the list
+                Grass prefab = _grassPrefabs[Random.Range(0, _grassPrefabs.Count)];
 
-                var grass = Instantiate(_grassPrefab, pos, Quaternion.identity);
+                Vector3 pos = new Vector3(c * _grassSpacing, 0, r * _grassSpacing);
+                Grass grass = Instantiate(prefab, pos, Quaternion.identity);
+                grass.transform.parent = _grassHolder;
                 _allGrass.Add(grass);
             }
         }
