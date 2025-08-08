@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10834cf75d1d768479df0c3a62b7ab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eatDuration: 2
-  _moveDuration: 2
+  _eatDuration: 0.1
+  _moveSpeed: 50
   _animator: {fileID: 792749224517177450}
 --- !u!1001 &2435533939722971827
 PrefabInstance:

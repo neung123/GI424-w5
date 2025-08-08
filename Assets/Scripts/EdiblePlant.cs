@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class Grass : MonoBehaviour
+public class EdiblePlant : MonoBehaviour
 {
+    [SerializeField]
+    private PlantType _type;
+
     [SerializeField]
     private float _regrowDuration = 3f;
 
@@ -20,6 +23,8 @@ public class Grass : MonoBehaviour
         IsAvailable = false;
         _animator.SetTrigger("Disappear");
         Invoke(nameof(Regrow), _regrowDuration);
+
+        GameManager.Instance.OnPlantEaten(_type);
     }
 
     private void Regrow()

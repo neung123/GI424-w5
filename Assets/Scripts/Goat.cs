@@ -14,7 +14,7 @@ public class Goat : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
-    private List<Grass> _allGrass;
+    private List<EdiblePlant> _allGrass;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class Goat : MonoBehaviour
 
             if (availableGrass.Count > 0)
             {
-                Grass target = availableGrass[Random.Range(0, availableGrass.Count)];
+                EdiblePlant target = availableGrass[Random.Range(0, availableGrass.Count)];
 
                 yield return StartCoroutine(MoveToTarget(target.transform.position));
 
