@@ -7381,7 +7381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8d3358c1638c743b28ba60dd52f607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isGenerateGrass: 0
+  _isGenerateGrass: 1
   _generateEdible:
   - {fileID: 39282273613357550}
   - {fileID: 1580664394899938909}
