@@ -1493,7 +1493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6471910306988502493, guid: 7e77dd1fbae547446a4fca5477f4cba1, type: 3}
       propertyPath: m_Range
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6471910306988502493, guid: 7e77dd1fbae547446a4fca5477f4cba1, type: 3}
       propertyPath: m_Lightmapping
